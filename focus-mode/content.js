@@ -1,0 +1,1 @@
+document.getElementsByClassName('new-creation__menu-item')[0].click()

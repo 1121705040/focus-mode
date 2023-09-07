@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "排版助手LX",
+  "version": "1.0",
+  "description": "帮助你进行模板内容的修改！",
+  "author": "李鑫",
+  "icons": {
+    "16": "images/cat4.png",
+    "32": "images/cat4.png",
+    "48": "images/cat4.png",
+    "128": "images/cat4.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/cat4.png",
+      "32": "images/cat4.png",
+      "48": "images/cat4.png",
+      "128": "images/cat4.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mp.weixin.qq.com/cgi-bin/home*"],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "permissions": ["scripting", "activeTab","storage","notifications"],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  }
+}
